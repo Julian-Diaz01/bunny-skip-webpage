@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Original illustration for the &quot;Zero telemetry&quot; feature: a broadcast signal glyph crossed out, with fading data dots, not a screenshot of any real interface.">
+  <!--
+    PROVENANCE: Hand-authored original vector art, feature tile "Zero
+    telemetry". Abstract iconography only (a crossed-out signal/broadcast
+    glyph with dissolving data dots) — invented, not a screenshot or
+    recreation of any real product UI. Palette matches the site's
+    paper/night/sun token family.
+  -->
+  <defs>
+    <radialGradient id="zt-glow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#FFD9A0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FF8A3D" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FF6A2A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="400" fill="#F6EEDD"/>
+  <circle cx="200" cy="160" r="190" fill="url(#zt-glow)"/>
+
+  <!-- shield -->
+  <path d="M200,80 L282,108 C282,180 262,240 200,278 C138,240 118,180 118,108 Z" fill="#15110D" stroke="#FF6A2A" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- broadcast arcs, fading outward to represent "no outbound signal" -->
+  <g fill="none" stroke="#FF6A2A" stroke-width="6" stroke-linecap="round">
+    <path d="M170,190 a42,42 0 0 1 60,0" stroke-opacity="0.9"/>
+    <path d="M150,168 a72,72 0 0 1 100,0" stroke-opacity="0.5"/>
+    <path d="M130,146 a102,102 0 0 1 140,0" stroke-opacity="0.22"/>
+  </g>
+  <circle cx="200" cy="200" r="10" fill="#FFD9A0"/>
+
+  <!-- diagonal strike, signal blocked -->
+  <line x1="128" y1="230" x2="272" y2="118" stroke="#F6EEDD" stroke-width="10" stroke-linecap="round"/>
+  <line x1="128" y1="230" x2="272" y2="118" stroke="#FF6A2A" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- dissolving data dots trailing away, unsent -->
+  <g fill="#3A2E20">
+    <circle cx="300" cy="150" r="6" fill-opacity="0.6"/>
+    <circle cx="320" cy="130" r="4" fill-opacity="0.4"/>
+    <circle cx="335" cy="112" r="2.5" fill-opacity="0.2"/>
+  </g>
+</svg>

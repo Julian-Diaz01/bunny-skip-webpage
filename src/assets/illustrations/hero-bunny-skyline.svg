@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Original illustration: a bunny mid-leap over a skyline built from streaming-platform UI chrome, backlit by a glowing sun/moon disc.">
+  <!--
+    PROVENANCE: Hand-authored original vector art for the Bunny Skip landing
+    page hero. This is synthetic illustration only — it does not depict any
+    real product screen, any real streaming platform's actual UI, logo, or
+    screenshot, and it does not depict ad-skipping. The "buildings" are
+    invented abstractions of generic UI chrome (a play glyph, a progress
+    track, a rounded pill labeled "SKIP INTRO") rendered as skyline forms.
+    Palette: warm cream/paper, near-black night, vivid sun-orange accent
+    (matches the site's paper/night/sun token family).
+  -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241B12"/>
+      <stop offset="60%" stop-color="#171310"/>
+      <stop offset="100%" stop-color="#0F0C0A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#FFE3BB"/>
+      <stop offset="30%" stop-color="#FFA157"/>
+      <stop offset="65%" stop-color="#FF6A2A" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FF6A2A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD9A0"/>
+      <stop offset="70%" stop-color="#FF8A3D"/>
+      <stop offset="100%" stop-color="#FF6A2A"/>
+    </radialGradient>
+    <linearGradient id="groundFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F0C0A" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0F0C0A" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Night sky ground -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- Signature motif: circular sun/moon disc, abstract backlight -->
+  <circle cx="800" cy="430" r="380" fill="url(#glow)"/>
+  <circle cx="800" cy="430" r="215" fill="url(#disc)"/>
+  <circle cx="800" cy="430" r="245" fill="none" stroke="#FFD9A0" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="800" cy="430" r="280" fill="none" stroke="#FFD9A0" stroke-opacity="0.18" stroke-width="1.5"/>
+
+  <!-- Skyline built from streaming-platform UI chrome, in silhouette -->
+  <g>
+    <!-- plain UI-panel building with list-row "windows" -->
+    <rect x="30" y="660" width="120" height="240" fill="#0F0C0A"/>
+    <g fill="#FFD9A0" fill-opacity="0.5">
+      <rect x="50" y="690" width="40" height="10" rx="5"/>
+      <rect x="50" y="715" width="60" height="10" rx="5"/>
+      <rect x="50" y="740" width="30" height="10" rx="5"/>
+      <rect x="50" y="790" width="50" height="10" rx="5"/>
+      <rect x="50" y="815" width="35" height="10" rx="5"/>
+    </g>
+
+    <!-- play-button spire building -->
+    <rect x="175" y="600" width="100" height="300" fill="#120E0B"/>
+    <path d="M205,600 L205,540 L270,570 Z" fill="#120E0B"/>
+    <g fill="#FF6A2A" fill-opacity="0.85">
+      <rect x="200" y="640" width="50" height="9" rx="4.5"/>
+      <rect x="200" y="665" width="35" height="9" rx="4.5"/>
+    </g>
+
+    <rect x="300" y="720" width="140" height="180" fill="#0F0C0A"/>
+    <g fill="#FFD9A0" fill-opacity="0.45">
+      <rect x="320" y="745" width="45" height="9" rx="4.5"/>
+      <rect x="320" y="770" width="60" height="9" rx="4.5"/>
+      <rect x="320" y="795" width="30" height="9" rx="4.5"/>
+    </g>
+
+    <!-- progress-track building: fill + scrubber knob -->
+    <rect x="465" y="640" width="70" height="260" rx="35" fill="#120E0B"/>
+    <rect x="465" y="790" width="70" height="110" rx="35" fill="#FF6A2A"/>
+    <circle cx="500" cy="790" r="20" fill="#FFD9A0"/>
+
+    <!-- "SKIP INTRO" pill rendered as a building (signature detail from brief) -->
+    <rect x="600" y="560" width="170" height="340" rx="85" fill="#120E0B" stroke="#FF6A2A" stroke-opacity="0.4" stroke-width="2"/>
+    <rect x="620" y="700" width="130" height="46" rx="23" fill="#1B1510"/>
+    <text x="685" y="729" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2" fill="#FFD9A0" text-anchor="middle">SKIP INTRO</text>
+
+    <rect x="815" y="700" width="110" height="200" fill="#0F0C0A"/>
+    <g fill="#FFD9A0" fill-opacity="0.45">
+      <rect x="835" y="725" width="35" height="9" rx="4.5"/>
+      <rect x="835" y="750" width="50" height="9" rx="4.5"/>
+      <rect x="835" y="775" width="28" height="9" rx="4.5"/>
+    </g>
+
+    <!-- second play-button spire, smaller -->
+    <rect x="960" y="650" width="90" height="250" fill="#120E0B"/>
+    <path d="M985,650 L985,600 L1040,625 Z" fill="#120E0B"/>
+    <g fill="#FF6A2A" fill-opacity="0.8">
+      <rect x="980" y="685" width="45" height="9" rx="4.5"/>
+    </g>
+
+    <rect x="1090" y="730" width="150" height="170" fill="#0F0C0A"/>
+    <g fill="#FFD9A0" fill-opacity="0.45">
+      <rect x="1110" y="755" width="50" height="9" rx="4.5"/>
+      <rect x="1110" y="780" width="35" height="9" rx="4.5"/>
+      <rect x="1110" y="805" width="60" height="9" rx="4.5"/>
+    </g>
+
+    <!-- second progress-track building -->
+    <rect x="1280" y="670" width="65" height="230" rx="32" fill="#120E0B"/>
+    <rect x="1280" y="770" width="65" height="130" rx="32" fill="#FF6A2A" fill-opacity="0.9"/>
+    <circle cx="1312" cy="770" r="18" fill="#FFD9A0"/>
+
+    <rect x="1390" y="745" width="120" height="155" fill="#0F0C0A"/>
+    <g fill="#FFD9A0" fill-opacity="0.45">
+      <rect x="1410" y="770" width="40" height="9" rx="4.5"/>
+      <rect x="1410" y="795" width="55" height="9" rx="4.5"/>
+    </g>
+
+    <rect x="1530" y="700" width="70" height="200" fill="#120E0B"/>
+  </g>
+
+  <!-- Ground shadow fade so buildings read as grounded -->
+  <rect x="0" y="820" width="1600" height="80" fill="url(#groundFade)"/>
+
+  <!-- Bunny, mid-leap, backlit silhouette with warm rim light -->
+  <g transform="translate(640,90) rotate(-9) scale(1.18)" fill="#F6EEDD" stroke="#FF6A2A" stroke-opacity="0.4" stroke-width="3" stroke-linejoin="round">
+    <!-- extended hind leg (leap) -->
+    <path d="M60,210 C40,230 20,246 8,257 C-2,267 14,270 30,261 C56,248 82,224 97,204 C86,199 70,202 60,210 Z"/>
+    <!-- tail -->
+    <circle cx="53" cy="184" r="14" stroke-width="2"/>
+    <!-- body, arched leap -->
+    <path d="M40,180 C28,138 60,92 122,78 C174,66 232,70 272,94 C302,112 312,141 301,166 C290,187 259,197 228,200 C178,207 108,207 68,196 C53,191 45,187 40,180 Z"/>
+    <!-- tucked front leg -->
+    <path d="M255,175 C261,196 256,217 240,227 C229,234 219,226 222,213 C226,196 236,181 246,173 Z"/>
+    <!-- head -->
+    <circle cx="305" cy="94" r="43"/>
+    <!-- nose -->
+    <path d="M341,99 C351,101 358,108 355,117 C352,125 340,125 334,119 Z"/>
+    <!-- ear 1 -->
+    <path d="M274,64 C253,18 238,-33 249,-58 C262,-63 281,-31 293,10 C301,36 301,56 296,69 Z"/>
+    <!-- ear 2 -->
+    <path d="M311,59 C310,8 321,-43 341,-63 C354,-61 357,-16 347,26 C339,50 326,62 316,66 Z"/>
+    <!-- eye -->
+    <circle cx="316" cy="86" r="4" fill="#15110D" stroke="none"/>
+  </g>
+</svg>
