@@ -4,6 +4,30 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("./assets/fonts/unbounded-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Literata";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("./assets/fonts/literata-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Literata";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("./assets/fonts/literata-italic-variable.woff2") format("woff2");
+}
+
 /*
  * Bunny Skip brand tokens — "paper / night / sun" family.
  * Locked palette per .impeccable/surfaces/route.md (confirmed surface brief):
@@ -40,8 +64,8 @@
    *   --font-display: geometric display sans, large/light-weight, all-caps headlines
    *   --font-body: humanist serif, taglines/quotes/body copy
    */
-  --font-display: sans-serif;
-  --font-body: serif;
+  --font-display: "Unbounded", sans-serif;
+  --font-body: "Literata", serif;
 
   /* shadcn semantic tokens, mapped onto the paper family by default */
   --background: var(--color-paper);
@@ -189,5 +213,61 @@
   h5,
   h6 {
     font-family: var(--font-display);
+  }
+
+  html {
+    color-scheme: light;
+    scrollbar-color: var(--color-sun-border) var(--color-paper-muted);
+    scrollbar-width: thin;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  ::selection {
+    background-color: var(--color-sun);
+    color: var(--color-sun-foreground);
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper-muted);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-sun-border);
+    border-radius: 999px;
+    border: 3px solid var(--color-paper-muted);
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /*
+   * `.reveal` is visible by default — no `opacity: 0` here. Motion is an
+   * enhancement that `useReveal` opts individual elements into by adding
+   * `reveal-pending` itself (see src/hooks/use-reveal.ts); CSS never hides
+   * content on its own, so a no-JS/no-IntersectionObserver visitor and a
+   * `prefers-reduced-motion: reduce` visitor both see full content
+   * immediately.
+   */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      transition:
+        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.reveal-pending {
+      opacity: 0;
+      transform: translateY(28px);
+    }
   }
 }
