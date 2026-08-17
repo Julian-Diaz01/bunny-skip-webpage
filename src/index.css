@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Bunny Skip brand tokens — "paper / night / sun" family.
+ * Locked palette per .impeccable/surfaces/route.md (confirmed surface brief):
+ *   paper = warm cream/paper ground (light, warm off-white — not pure white)
+ *   night = near-black contrast panels (warm/neutral tint — not blue-black)
+ *   sun   = vivid sun-orange accent (saturated enough to own a full section)
+ * All defined in oklch(). Values below are this scaffold's concrete picks;
+ * a later agent may refine but should stay faithful to this formula.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* --- paper family --- */
+  --color-paper: oklch(0.97 0.02 75);
+  --color-paper-foreground: oklch(0.19 0.015 55);
+  --color-paper-muted: oklch(0.93 0.02 78);
+  --color-paper-border: oklch(0.88 0.02 75);
+
+  /* --- night family --- */
+  --color-night: oklch(0.19 0.015 55);
+  --color-night-foreground: oklch(0.96 0.01 80);
+  --color-night-muted: oklch(0.27 0.015 55);
+  --color-night-border: oklch(0.32 0.015 55);
+
+  /* --- sun family --- */
+  --color-sun: oklch(0.7 0.2 48);
+  --color-sun-foreground: oklch(0.16 0.02 50);
+  --color-sun-muted: oklch(0.85 0.1 55);
+  --color-sun-border: oklch(0.6 0.19 45);
+
+  /*
+   * Typeface slots — intentionally generic placeholders.
+   * A later agent fills these with the real pairing:
+   *   --font-display: geometric display sans, large/light-weight, all-caps headlines
+   *   --font-body: humanist serif, taglines/quotes/body copy
+   */
+  --font-display: sans-serif;
+  --font-body: serif;
+
+  /* shadcn semantic tokens, mapped onto the paper family by default */
+  --background: var(--color-paper);
+  --foreground: var(--color-paper-foreground);
+  --card: oklch(0.99 0.01 80);
+  --card-foreground: var(--color-paper-foreground);
+  --popover: oklch(0.99 0.01 80);
+  --popover-foreground: var(--color-paper-foreground);
+  --primary: var(--color-night);
+  --primary-foreground: var(--color-night-foreground);
+  --secondary: var(--color-paper-muted);
+  --secondary-foreground: var(--color-paper-foreground);
+  --muted: var(--color-paper-muted);
+  --muted-foreground: oklch(0.45 0.02 75);
+  --accent-foreground: var(--color-sun-foreground);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: var(--color-paper-border);
+  --input: var(--color-paper-border);
+  --ring: var(--color-sun);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* .dark class — night family becomes the base surface */
+.dark {
+  --background: var(--color-night);
+  --foreground: var(--color-night-foreground);
+  --card: var(--color-night-muted);
+  --card-foreground: var(--color-night-foreground);
+  --popover: var(--color-night-muted);
+  --popover-foreground: var(--color-night-foreground);
+  --primary: var(--color-sun);
+  --primary-foreground: var(--color-sun-foreground);
+  --secondary: var(--color-night-muted);
+  --secondary-foreground: var(--color-night-foreground);
+  --muted: var(--color-night-muted);
+  --muted-foreground: oklch(0.65 0.02 70);
+  --accent-foreground: var(--color-sun-foreground);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: var(--color-night-border);
+  --input: var(--color-night-border);
+  --ring: var(--color-sun);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: var(--color-sun);
+  --sidebar-primary-foreground: var(--color-sun-foreground);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: var(--color-sun);
+}
+
+@theme inline {
+  /* paper / night / sun families as Tailwind color utilities:
+     bg-paper, bg-night, bg-sun, text-paper-foreground, border-night-border, etc. */
+  --color-paper: var(--color-paper);
+  --color-paper-foreground: var(--color-paper-foreground);
+  --color-paper-muted: var(--color-paper-muted);
+  --color-paper-border: var(--color-paper-border);
+  --color-night: var(--color-night);
+  --color-night-foreground: var(--color-night-foreground);
+  --color-night-muted: var(--color-night-muted);
+  --color-night-border: var(--color-night-border);
+  --color-sun: var(--color-sun);
+  --color-sun-foreground: var(--color-sun-foreground);
+  --color-sun-muted: var(--color-sun-muted);
+  --color-sun-border: var(--color-sun-border);
+
+  /* typeface slots as Tailwind utilities: font-display, font-body */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-display);
+  --font-sans: var(--font-body);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--color-sun);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
