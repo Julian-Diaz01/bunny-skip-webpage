@@ -45,7 +45,7 @@ function Platforms() {
                     </span>
                   </p>
                 ) : (
-                  <p className="mt-1 font-body text-sm text-paper-foreground/55 italic">
+                  <p className="mt-1 font-body text-sm text-paper-foreground/70 italic">
                     learned via element picker
                   </p>
                 )}

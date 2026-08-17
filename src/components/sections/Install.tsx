@@ -1,8 +1,23 @@
 import icon128 from "@/assets/extension/icons/icon128.png"
+import screenshotAddRule from "@/assets/extension/store-assets/screenshot-3-add-rule.png"
+import screenshotThisSite from "@/assets/extension/store-assets/screenshot-1-this-site.png"
 import { CtaCircle } from "@/components/Cta"
 import { Reveal } from "@/components/Reveal"
 import { GithubMark } from "@/components/icons/GithubMark"
 import { CHROME_STORE_ID, CHROME_STORE_URL, GITHUB_URL } from "@/lib/links"
+
+const PROOF_SHOTS = [
+  {
+    src: screenshotThisSite,
+    alt: "Real screenshot of the Bunny Skip popup open on a streaming page, showing the saved rule for the current site.",
+    caption: "The popup, open on a streaming page you're already watching.",
+  },
+  {
+    src: screenshotAddRule,
+    alt: "Real screenshot of the Bunny Skip element picker mid-selection, capturing a new skip-button rule.",
+    caption: "Adding a rule by pointing the element picker at the button.",
+  },
+]
 
 function Install() {
   return (
@@ -18,7 +33,29 @@ function Install() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <Reveal
+          delayMs={60}
+          className="mt-12 grid gap-5 sm:grid-cols-2"
+        >
+          {PROOF_SHOTS.map((shot) => (
+            <figure
+              key={shot.src}
+              className="overflow-hidden rounded-2xl border border-paper-border bg-card"
+            >
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                loading="lazy"
+                className="w-full object-cover"
+              />
+              <figcaption className="border-t border-paper-border px-5 py-3 font-body text-sm text-paper-foreground/70">
+                {shot.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </Reveal>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <Reveal className="flex flex-col justify-between gap-8 rounded-3xl border border-paper-border bg-card p-8 sm:p-10">
             <div>
               <img
@@ -35,7 +72,7 @@ function Install() {
                 The published listing. One click, kept up to date
                 automatically like any other extension.
               </p>
-              <p className="mt-4 font-body text-xs text-paper-foreground/45 break-all">
+              <p className="mt-4 font-body text-xs text-paper-foreground/70 break-all">
                 {CHROME_STORE_ID}
               </p>
             </div>
@@ -62,7 +99,7 @@ function Install() {
                 every rule — before you decide to trust it on a page that
                 asks for host permissions.
               </p>
-              <p className="mt-4 font-body text-xs text-paper/45">
+              <p className="mt-4 font-body text-xs text-paper/65">
                 Julian-Diaz01/bunny-skip-extension
               </p>
             </div>

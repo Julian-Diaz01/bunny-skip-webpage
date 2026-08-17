@@ -38,7 +38,7 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 transition-colors hover:text-sun focus-visible:text-sun focus-visible:outline-none"
+                  className="inline-flex items-center gap-1.5 rounded-sm transition-colors hover:text-sun focus-visible:text-sun focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun focus-visible:ring-offset-2 focus-visible:ring-offset-night"
                 >
                   {link.label === "GitHub" && (
                     <GithubMark className="size-3.5" aria-hidden="true" />
@@ -52,7 +52,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-paper/10 px-6 py-6 sm:px-10">
-        <p className="font-body text-xs text-paper/40">
+        <p className="font-body text-xs text-paper/60">
           Bunny Skip is an independent, open-source project. Not affiliated
           with or endorsed by any streaming platform.
         </p>

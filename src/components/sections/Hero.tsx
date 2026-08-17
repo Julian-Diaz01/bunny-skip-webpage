@@ -3,7 +3,6 @@ import { CtaLink } from "@/components/Cta"
 import { ExtensionMark } from "@/components/icons/ExtensionMark"
 import { GithubMark } from "@/components/icons/GithubMark"
 import { PlatformMark } from "@/components/marks/PlatformMark"
-import { Nav } from "@/components/sections/Nav"
 import { CHROME_STORE_URL, GITHUB_URL } from "@/lib/links"
 import { PLATFORMS } from "@/lib/platforms"
 
@@ -31,8 +30,6 @@ function Hero() {
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-t from-night via-night/15 to-transparent"
       />
-
-      <Nav />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-6 pb-16 pt-40 sm:px-10 sm:pb-20">
         <h1 className="max-w-3xl font-display text-[13vw] leading-[0.95] font-semibold tracking-tight uppercase sm:text-6xl md:text-7xl lg:text-[4.75rem]">

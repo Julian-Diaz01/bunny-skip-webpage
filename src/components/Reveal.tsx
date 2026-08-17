@@ -15,14 +15,18 @@ function Reveal({
   className?: string
   children: React.ReactNode
 } & React.HTMLAttributes<HTMLElement>) {
-  const { ref, isVisible } = useReveal<HTMLElement>()
+  const { ref, isPending } = useReveal<HTMLElement>()
 
   return (
     <Tag
       ref={ref}
-      className={cn("reveal", isVisible && "is-visible", className)}
-      style={delayMs ? { transitionDelay: `${delayMs}ms` } : undefined}
       {...props}
+      className={cn("reveal", isPending && "reveal-pending", className)}
+      style={
+        delayMs
+          ? { transitionDelay: `${delayMs}ms`, ...props.style }
+          : props.style
+      }
     >
       {children}
     </Tag>

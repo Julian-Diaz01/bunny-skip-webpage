@@ -216,10 +216,15 @@
   }
 
   html {
-    scroll-behavior: smooth;
     color-scheme: light;
     scrollbar-color: var(--color-sun-border) var(--color-paper-muted);
     scrollbar-width: thin;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   ::selection {
@@ -246,17 +251,23 @@
 }
 
 @layer utilities {
+  /*
+   * `.reveal` is visible by default — no `opacity: 0` here. Motion is an
+   * enhancement that `useReveal` opts individual elements into by adding
+   * `reveal-pending` itself (see src/hooks/use-reveal.ts); CSS never hides
+   * content on its own, so a no-JS/no-IntersectionObserver visitor and a
+   * `prefers-reduced-motion: reduce` visitor both see full content
+   * immediately.
+   */
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
       transition:
         opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
         transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
+    .reveal.reveal-pending {
+      opacity: 0;
+      transform: translateY(28px);
     }
   }
 }

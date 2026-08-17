@@ -10,10 +10,13 @@ const LINKS = [
 function Nav() {
   return (
     <header className="absolute inset-x-0 top-0 z-20">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10">
+      <nav
+        aria-label="Primary"
+        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10"
+      >
         <a
           href="#top"
-          className="flex items-center gap-2.5 font-display text-sm font-semibold tracking-[0.08em] text-paper uppercase"
+          className="flex items-center gap-2.5 rounded-sm font-display text-sm font-semibold tracking-[0.08em] text-paper uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun focus-visible:ring-offset-2 focus-visible:ring-offset-night"
         >
           <img
             src={icon48}
@@ -28,7 +31,7 @@ function Nav() {
           {LINKS.map((link) => (
             <li key={link.href}>
               <a
-                className="transition-colors hover:text-sun focus-visible:text-sun focus-visible:outline-none"
+                className="rounded-sm transition-colors hover:text-sun focus-visible:text-sun focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun focus-visible:ring-offset-2 focus-visible:ring-offset-night"
                 href={link.href}
               >
                 {link.label}
