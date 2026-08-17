@@ -135,7 +135,7 @@
       "id": "integrate",
       "title": "Merge scaffold + assets + landing-page into main",
       "owner": "coordinator",
-      "state": "running",
+      "state": "merged",
       "branch": "main",
       "worktree": ".",
       "depends_on": ["document"],
