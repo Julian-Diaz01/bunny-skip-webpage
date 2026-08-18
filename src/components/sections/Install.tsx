@@ -21,62 +21,70 @@ const PROOF_SHOTS = [
 
 function Install() {
   return (
-    <section id="install" className="bg-paper py-24 text-paper-foreground sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10">
-        <Reveal className="max-w-2xl">
-          <h2 className="font-display text-4xl font-semibold uppercase sm:text-5xl">
-            Install
+    <section
+      id="install"
+      className="scroll-mt-24 bg-paper py-28 text-paper-foreground sm:py-40 lg:py-56"
+    >
+      <div className="mx-auto max-w-[72rem] px-6 sm:px-8 lg:px-10">
+        <Reveal className="mx-auto max-w-[46rem] text-center">
+          <h2 className="mx-auto max-w-[20ch] font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.0] font-semibold tracking-[-0.015em] uppercase">
+            Install Bunny Skip
           </h2>
-          <p className="mt-5 font-body text-lg leading-relaxed text-paper-foreground/70">
+          <p className="mt-6 font-body text-lg leading-[1.55] text-paper-foreground/70 sm:text-xl">
             Install from the Chrome Web Store, or read every line first — the
             source is the same code either way.
           </p>
         </Reveal>
 
         <Reveal
-          delayMs={60}
-          className="mt-12 grid gap-5 sm:grid-cols-2"
+          delayMs={140}
+          className="relative mx-auto mt-16 grid w-full max-w-[64rem] gap-6 sm:mt-20 sm:grid-cols-2"
         >
+          <span
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -z-10 size-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sun/10 blur-2xl"
+          />
           {PROOF_SHOTS.map((shot) => (
-            <figure
-              key={shot.src}
-              className="overflow-hidden rounded-2xl border border-paper-border bg-card"
-            >
-              <img
-                src={shot.src}
-                alt={shot.alt}
-                loading="lazy"
-                className="w-full object-cover"
-              />
-              <figcaption className="border-t border-paper-border px-5 py-3 font-body text-sm text-paper-foreground/70">
+            <figure key={shot.src}>
+              <div className="overflow-hidden rounded-2xl border border-paper-border">
+                <img
+                  src={shot.src}
+                  alt={shot.alt}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-4 text-center font-body text-sm leading-relaxed text-paper-foreground/60">
                 {shot.caption}
               </figcaption>
             </figure>
           ))}
         </Reveal>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-2">
-          <Reveal className="flex flex-col justify-between gap-8 rounded-3xl border border-paper-border bg-card p-8 sm:p-10">
-            <div>
-              <img
-                src={icon128}
-                alt="Bunny Skip extension icon"
-                width={56}
-                height={56}
-                className="rounded-xl"
-              />
-              <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight uppercase">
-                Chrome Web Store
-              </h3>
-              <p className="mt-2 font-body leading-relaxed text-paper-foreground/70">
-                The published listing. One click, kept up to date
-                automatically like any other extension.
-              </p>
-              <p className="mt-4 font-body text-xs text-paper-foreground/70 break-all">
-                {CHROME_STORE_ID}
-              </p>
-            </div>
-            <CtaCircle href={CHROME_STORE_URL} tone="light">
+        <div className="mx-auto mt-24 grid max-w-[64rem] gap-4 sm:mt-32 sm:grid-cols-2">
+          <Reveal className="rounded-2xl border border-paper-border bg-card p-8 text-center sm:p-10 sm:text-left">
+            <img
+              src={icon128}
+              alt="Bunny Skip extension icon"
+              width={56}
+              height={56}
+              className="mx-auto rounded-xl sm:mx-0"
+            />
+            <h3 className="mt-6 font-display text-[1.375rem] leading-[1.15] font-semibold tracking-[-0.01em] uppercase sm:text-2xl">
+              Chrome Web Store
+            </h3>
+            <p className="mt-3 font-body text-base leading-[1.7] text-paper-foreground/70 sm:text-[1.0625rem]">
+              The published listing. One click, kept up to date
+              automatically like any other extension.
+            </p>
+            <p className="mt-4 font-body text-sm break-all text-paper-foreground/60">
+              {CHROME_STORE_ID}
+            </p>
+            <CtaCircle
+              href={CHROME_STORE_URL}
+              tone="light"
+              className="mx-auto mt-10 sm:mx-0"
+            >
               Install
               <br />
               now
@@ -85,25 +93,27 @@ function Install() {
 
           <Reveal
             delayMs={100}
-            className="flex flex-col justify-between gap-8 rounded-3xl border border-night bg-night p-8 text-paper sm:p-10"
+            className="rounded-2xl border border-night bg-night p-8 text-center text-paper sm:p-10 sm:text-left"
           >
-            <div>
-              <span className="inline-flex size-14 items-center justify-center rounded-xl bg-paper/10">
-                <GithubMark className="size-7" />
-              </span>
-              <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight uppercase">
-                GitHub source
-              </h3>
-              <p className="mt-2 font-body leading-relaxed text-paper/70">
-                MIT licensed. Read the content script, the storage schema,
-                every rule — before you decide to trust it on a page that
-                asks for host permissions.
-              </p>
-              <p className="mt-4 font-body text-xs text-paper/65">
-                Julian-Diaz01/bunny-skip-extension
-              </p>
-            </div>
-            <CtaCircle href={GITHUB_URL} tone="dark">
+            <span className="mx-auto inline-flex size-14 items-center justify-center rounded-xl border border-paper/25 text-paper sm:mx-0">
+              <GithubMark className="size-7" />
+            </span>
+            <h3 className="mt-6 font-display text-[1.375rem] leading-[1.15] font-semibold tracking-[-0.01em] uppercase sm:text-2xl">
+              GitHub source
+            </h3>
+            <p className="mt-3 font-body text-base leading-[1.7] text-paper/70 sm:text-[1.0625rem]">
+              MIT licensed. Read the content script, the storage schema,
+              every rule — before you decide to trust it on a page that
+              asks for host permissions.
+            </p>
+            <p className="mt-4 font-body text-sm text-paper/60">
+              Julian-Diaz01/bunny-skip-extension
+            </p>
+            <CtaCircle
+              href={GITHUB_URL}
+              tone="dark"
+              className="mx-auto mt-10 sm:mx-0"
+            >
               View
               <br />
               source

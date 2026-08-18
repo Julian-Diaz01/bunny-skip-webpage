@@ -90,6 +90,16 @@ function CtaLink({
   )
 }
 
+type CtaCircleTone = "light" | "dark" | "sun-on-light"
+
+const CIRCLE_TONE_CLASS: Record<CtaCircleTone, string> = {
+  light:
+    "border-night bg-night text-night-foreground hover:bg-sun hover:border-sun hover:text-sun-foreground focus-visible:ring-night",
+  dark: "border-sun bg-sun text-sun-foreground hover:bg-paper hover:border-paper hover:text-night focus-visible:ring-sun",
+  "sun-on-light":
+    "border-sun bg-sun text-sun-foreground hover:bg-night hover:border-night hover:text-night-foreground focus-visible:ring-night",
+}
+
 /** Circular CTA used on the two install-tier cards, per the disc motif. */
 function CtaCircle({
   href,
@@ -99,7 +109,7 @@ function CtaCircle({
   ...props
 }: {
   href: string
-  tone?: "light" | "dark"
+  tone?: CtaCircleTone
   className?: string
   children: React.ReactNode
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
@@ -110,9 +120,7 @@ function CtaCircle({
         "group inline-flex size-28 shrink-0 flex-col items-center justify-center gap-1 rounded-full border-2 text-center font-display text-[0.7rem] font-semibold tracking-[0.06em] uppercase transition-all duration-200",
         "focus-visible:ring-3 focus-visible:outline-none",
         "active:translate-y-px",
-        tone === "light"
-          ? "border-night bg-night text-night-foreground hover:bg-sun hover:border-sun hover:text-sun-foreground focus-visible:ring-night"
-          : "border-sun bg-sun text-sun-foreground hover:bg-paper hover:border-paper hover:text-night focus-visible:ring-sun",
+        CIRCLE_TONE_CLASS[tone],
         className
       )}
       {...EXTERNAL_PROPS}
@@ -124,4 +132,4 @@ function CtaCircle({
   )
 }
 
-export { CtaLink, CtaCircle }
+export { CtaLink, CtaCircle, ArrowRightGlyph, ArrowDownGlyph }

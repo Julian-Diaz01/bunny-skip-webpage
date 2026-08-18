@@ -1,6 +1,7 @@
 import featureElementPicker from "@/assets/illustrations/feature-element-picker.svg"
 import featureRulesAsData from "@/assets/illustrations/feature-rules-as-data.svg"
 import featureZeroTelemetry from "@/assets/illustrations/feature-zero-telemetry.svg"
+import flowMotif from "@/assets/illustrations/flow-motif.svg"
 import { Reveal } from "@/components/Reveal"
 
 const TILES = [
@@ -26,40 +27,47 @@ const TILES = [
 
 function FeatureTiles() {
   return (
-    <section className="bg-paper py-24 text-paper-foreground sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10">
-        <Reveal className="max-w-2xl">
-          <h2 className="font-display text-4xl font-semibold uppercase sm:text-5xl">
+    <section className="relative overflow-hidden bg-paper py-28 text-paper-foreground sm:py-40 lg:py-56">
+      <img
+        src={flowMotif}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[55%] w-full -scale-y-100 opacity-50 mix-blend-multiply"
+      />
+
+      <div className="relative mx-auto max-w-[72rem] px-6 sm:px-8 lg:px-10">
+        <Reveal className="mx-auto max-w-[46rem] text-center">
+          <h2 className="mx-auto max-w-[20ch] font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.0] font-semibold tracking-[-0.015em] uppercase">
             Built to stay honest
           </h2>
-          <p className="mt-5 font-body text-lg leading-relaxed text-paper-foreground/70">
+          <p className="mt-6 font-body text-lg leading-[1.55] text-paper-foreground/70 sm:text-xl">
             Three decisions carry the whole trust story.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:mt-20 sm:grid-cols-3">
           {TILES.map((tile, i) => (
             <Reveal
               key={tile.title}
-              delayMs={i * 90}
-              className="flex flex-col overflow-hidden rounded-2xl border border-paper-border bg-night text-paper"
+              delayMs={i * 70}
+              className="group relative flex flex-col items-center rounded-2xl border border-paper-border bg-card p-8 text-center transition-colors duration-200 hover:border-sun-border sm:p-10"
             >
-              <div className="aspect-square w-full overflow-hidden bg-night">
-                <img
-                  src={tile.src}
-                  alt={tile.alt}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-lg font-semibold tracking-tight uppercase">
-                  {tile.title}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-paper/70">
-                  {tile.body}
-                </p>
-              </div>
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-sun/0 blur-2xl transition-colors duration-200 group-hover:bg-sun/10"
+              />
+              <img
+                src={tile.src}
+                alt={tile.alt}
+                className="w-full max-w-[16rem] rounded-xl"
+                loading="lazy"
+              />
+              <h3 className="mt-8 font-display text-[1.375rem] leading-[1.15] font-semibold tracking-[-0.01em] uppercase sm:text-2xl">
+                {tile.title}
+              </h3>
+              <p className="mx-auto mt-3 max-w-[34ch] font-body text-base leading-[1.7] text-paper-foreground/70 sm:text-[1.0625rem]">
+                {tile.body}
+              </p>
             </Reveal>
           ))}
         </div>

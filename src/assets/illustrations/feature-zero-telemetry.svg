@@ -7,33 +7,33 @@
     paper/night/sun token family.
   -->
   <defs>
-    <radialGradient id="zt-glow" cx="50%" cy="42%" r="60%">
-      <stop offset="0%" stop-color="#FFD9A0" stop-opacity="0.9"/>
-      <stop offset="60%" stop-color="#FF8A3D" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#FF6A2A" stop-opacity="0"/>
+    <radialGradient id="zt-glow" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#FFC9D6" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#FF7B9D" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="#FE5F8C" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
-  <rect width="400" height="400" fill="#F6EEDD"/>
+  <rect width="400" height="400" fill="#FCE9F1"/>
   <circle cx="200" cy="160" r="190" fill="url(#zt-glow)"/>
 
   <!-- shield -->
-  <path d="M200,80 L282,108 C282,180 262,240 200,278 C138,240 118,180 118,108 Z" fill="#15110D" stroke="#FF6A2A" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M200,80 L282,108 C282,180 262,240 200,278 C138,240 118,180 118,108 Z" fill="#161012" stroke="#FE5F8C" stroke-opacity="0.35" stroke-width="2"/>
 
   <!-- broadcast arcs, fading outward to represent "no outbound signal" -->
-  <g fill="none" stroke="#FF6A2A" stroke-width="6" stroke-linecap="round">
+  <g fill="none" stroke="#FE5F8C" stroke-width="6" stroke-linecap="round">
     <path d="M170,190 a42,42 0 0 1 60,0" stroke-opacity="0.9"/>
     <path d="M150,168 a72,72 0 0 1 100,0" stroke-opacity="0.5"/>
     <path d="M130,146 a102,102 0 0 1 140,0" stroke-opacity="0.22"/>
   </g>
-  <circle cx="200" cy="200" r="10" fill="#FFD9A0"/>
+  <circle cx="200" cy="200" r="10" fill="#FFC9D6"/>
 
   <!-- diagonal strike, signal blocked -->
-  <line x1="128" y1="230" x2="272" y2="118" stroke="#F6EEDD" stroke-width="10" stroke-linecap="round"/>
-  <line x1="128" y1="230" x2="272" y2="118" stroke="#FF6A2A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="128" y1="230" x2="272" y2="118" stroke="#FCE9F1" stroke-width="10" stroke-linecap="round"/>
+  <line x1="128" y1="230" x2="272" y2="118" stroke="#FE5F8C" stroke-width="4" stroke-linecap="round"/>
 
   <!-- dissolving data dots trailing away, unsent -->
-  <g fill="#3A2E20">
+  <g fill="#3C2A32">
     <circle cx="300" cy="150" r="6" fill-opacity="0.6"/>
     <circle cx="320" cy="130" r="4" fill-opacity="0.4"/>
     <circle cx="335" cy="112" r="2.5" fill-opacity="0.2"/>

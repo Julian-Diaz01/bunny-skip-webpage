@@ -30,33 +30,42 @@
 
 /*
  * Bunny Skip brand tokens — "paper / night / sun" family.
- * Locked palette per .impeccable/surfaces/route.md (confirmed surface brief):
- *   paper = warm cream/paper ground (light, warm off-white — not pure white)
- *   night = near-black contrast panels (warm/neutral tint — not blue-black)
- *   sun   = vivid sun-orange accent (saturated enough to own a full section)
- * All defined in oklch(). Values below are this scaffold's concrete picks;
- * a later agent may refine but should stay faithful to this formula.
+ * Palette matched to the real product's blush/rose identity (see
+ * .impeccable/surfaces/route.md and DESIGN.md):
+ *   paper = blush-cream ground (light, warm off-white — not pure white)
+ *   night = deep wine/plum contrast panels (warm tint — not blue-black)
+ *   sun   = rose-pink accent (saturated enough to own a full section)
+ * All defined in oklch(), converted from the app's own hex values so hue
+ * stays linked as the ground shifts.
  */
 :root {
   color-scheme: light dark;
 
   /* --- paper family --- */
-  --color-paper: oklch(0.97 0.02 75);
-  --color-paper-foreground: oklch(0.19 0.015 55);
-  --color-paper-muted: oklch(0.93 0.02 78);
-  --color-paper-border: oklch(0.88 0.02 75);
+  --color-paper: oklch(0.968 0.017 3.6);
+  --color-paper-foreground: oklch(0.233 0.038 350.4);
+  --color-paper-muted: oklch(0.928 0.017 3.6);
+  --color-paper-border: oklch(0.878 0.022 3.6);
 
   /* --- night family --- */
-  --color-night: oklch(0.19 0.015 55);
-  --color-night-foreground: oklch(0.96 0.01 80);
-  --color-night-muted: oklch(0.27 0.015 55);
-  --color-night-border: oklch(0.32 0.015 55);
+  --color-night: oklch(0.233 0.038 350.4);
+  --color-night-foreground: oklch(0.968 0.017 3.6);
+  --color-night-muted: oklch(0.313 0.038 350.4);
+  --color-night-border: oklch(0.363 0.038 350.4);
 
   /* --- sun family --- */
-  --color-sun: oklch(0.7 0.2 48);
-  --color-sun-foreground: oklch(0.16 0.02 50);
-  --color-sun-muted: oklch(0.85 0.1 55);
-  --color-sun-border: oklch(0.6 0.19 45);
+  --color-sun: oklch(0.599 0.177 6.3);
+  --color-sun-foreground: oklch(0.968 0.017 3.6);
+  --color-sun-muted: oklch(0.749 0.097 6.3);
+  --color-sun-border: oklch(0.499 0.167 6.3);
+  /*
+   * Full-bleed variant of `sun`, same hue/chroma, darkened until blush text
+   * (--color-sun-foreground) clears WCAG AA (4.5:1) against it — the plain
+   * `sun` swatch tops out around 3.9:1 even with white text, so the
+   * Manifesto section (the system's one full-saturation field) uses this
+   * instead of `sun` itself. Buttons/rings/chips keep using `sun` directly.
+   */
+  --color-sun-deep: oklch(0.5 0.177 6.3);
 
   /*
    * Typeface slots — intentionally generic placeholders.
@@ -70,16 +79,16 @@
   /* shadcn semantic tokens, mapped onto the paper family by default */
   --background: var(--color-paper);
   --foreground: var(--color-paper-foreground);
-  --card: oklch(0.99 0.01 80);
+  --card: oklch(0.979 0.017 76.1);
   --card-foreground: var(--color-paper-foreground);
-  --popover: oklch(0.99 0.01 80);
+  --popover: oklch(0.979 0.017 76.1);
   --popover-foreground: var(--color-paper-foreground);
   --primary: var(--color-night);
   --primary-foreground: var(--color-night-foreground);
   --secondary: var(--color-paper-muted);
   --secondary-foreground: var(--color-paper-foreground);
   --muted: var(--color-paper-muted);
-  --muted-foreground: oklch(0.45 0.02 75);
+  --muted-foreground: oklch(0.467 0.035 357.5);
   --accent-foreground: var(--color-sun-foreground);
   --destructive: oklch(0.577 0.245 27.325);
   --border: var(--color-paper-border);
@@ -114,7 +123,7 @@
   --secondary: var(--color-night-muted);
   --secondary-foreground: var(--color-night-foreground);
   --muted: var(--color-night-muted);
-  --muted-foreground: oklch(0.65 0.02 70);
+  --muted-foreground: oklch(0.65 0.035 357.5);
   --accent-foreground: var(--color-sun-foreground);
   --destructive: oklch(0.704 0.191 22.216);
   --border: var(--color-night-border);
@@ -150,6 +159,7 @@
   --color-sun-foreground: var(--color-sun-foreground);
   --color-sun-muted: var(--color-sun-muted);
   --color-sun-border: var(--color-sun-border);
+  --color-sun-deep: var(--color-sun-deep);
 
   /* typeface slots as Tailwind utilities: font-display, font-body */
   --font-display: var(--font-display);
@@ -262,12 +272,12 @@
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
       transition:
-        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.reveal-pending {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(16px);
     }
   }
 }

@@ -1,4 +1,5 @@
 import sunDiscMotif from "@/assets/illustrations/sun-disc-motif.svg"
+import { ArrowRightGlyph } from "@/components/Cta"
 import { Reveal } from "@/components/Reveal"
 import { PRIVACY_POLICY_URL } from "@/lib/links"
 
@@ -25,53 +26,57 @@ function Manifesto() {
   return (
     <section
       id="privacy"
-      className="relative overflow-hidden bg-sun py-24 text-sun-foreground sm:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-sun-deep py-32 text-sun-foreground sm:py-48 lg:py-64"
     >
       <img
         src={sunDiscMotif}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -top-1/4 -right-1/4 w-[70vw] max-w-3xl opacity-[0.12] mix-blend-multiply sm:-right-40 sm:top-1/2 sm:-translate-y-1/2"
+        className="pointer-events-none absolute top-1/2 left-1/2 w-[92vw] max-w-[46rem] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] mix-blend-multiply"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-8">
-          <Reveal>
-            <h2 className="font-display text-5xl leading-[0.95] font-semibold uppercase sm:text-6xl lg:text-7xl">
-              No backend.
-              <br />
-              No telemetry.
-              <br />
-              No eval.
-            </h2>
-            <p className="mt-7 max-w-md font-body text-lg leading-relaxed italic opacity-85">
-              A tool that runs on every streaming page you open earns its
-              trust in specifics, not a footnote — so here they are, in full.
-            </p>
-            <a
-              href={PRIVACY_POLICY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 font-display text-sm font-semibold tracking-[0.04em] uppercase underline decoration-2 underline-offset-4 transition-opacity hover:opacity-70"
-            >
-              Read the privacy policy
-              <span aria-hidden="true">→</span>
-            </a>
-          </Reveal>
+      <div className="relative mx-auto max-w-[72rem] px-6 sm:px-8 lg:px-10">
+        <Reveal className="relative mx-auto max-w-[52rem] text-center">
+          <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.94] font-semibold tracking-[-0.02em] uppercase">
+            No backend.
+            <br />
+            No telemetry.
+            <br />
+            No eval.
+          </h2>
+          <p className="mx-auto mt-8 max-w-[38ch] font-body text-xl leading-[1.5] italic sm:text-2xl">
+            A tool that runs on every streaming page you open earns its
+            trust in specifics, not a footnote — so here they are, in full.
+          </p>
+          <a
+            href={PRIVACY_POLICY_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-16 inline-flex items-center gap-2 rounded-sm font-display text-sm font-semibold tracking-[0.04em] text-sun-foreground uppercase underline decoration-2 underline-offset-4 transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-sun-deep"
+          >
+            Read the privacy policy
+            <ArrowRightGlyph className="size-3.5" />
+          </a>
+        </Reveal>
 
-          <Reveal delayMs={120} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-            {FACTS.map((fact) => (
-              <div key={fact.title} className="border-t-2 border-sun-foreground/25 pt-4">
-                <h3 className="font-display text-base font-semibold tracking-tight uppercase">
-                  {fact.title}
-                </h3>
-                <p className="mt-1.5 font-body text-sm leading-relaxed opacity-80">
-                  {fact.body}
-                </p>
-              </div>
-            ))}
-          </Reveal>
-        </div>
+        <Reveal
+          delayMs={140}
+          className="mt-24 grid grid-cols-1 gap-4 text-left sm:mt-28 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {FACTS.map((fact) => (
+            <div
+              key={fact.title}
+              className="rounded-2xl border border-sun-foreground/20 bg-sun-foreground/[0.06] p-6"
+            >
+              <h3 className="font-display text-sm font-semibold tracking-[0.06em] uppercase">
+                {fact.title}
+              </h3>
+              <p className="mt-2 font-body text-sm leading-relaxed">
+                {fact.body}
+              </p>
+            </div>
+          ))}
+        </Reveal>
       </div>
     </section>
   )

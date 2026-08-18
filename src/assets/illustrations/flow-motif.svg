@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Signature background flow motif: a soft organic band of layered curves, used as an ambient secondary layer behind select sections.">
+  <!--
+    PROVENANCE: Hand-authored original vector art. A secondary, organic
+    counterpart to the site's circular sun/moon disc motif — three soft
+    layered wave bands rather than a folklore shape, used sparingly as an
+    ambient background layer (never a dominant color field, per the One
+    Field Rule). Palette matches the site's paper/night/sun token family.
+  -->
+  <defs>
+    <linearGradient id="flow-a" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#FE5F8C" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#FE5F8C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flow-b" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#FF91AC" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FF91AC" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flow-c" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2B1620" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#2B1620" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M-40 320C120 250 220 380 360 330C500 280 560 140 720 170C820 190 880 260 940 240V520H-40Z"
+    fill="url(#flow-a)"
+  />
+  <path
+    d="M-60 200C80 260 180 120 340 160C500 200 540 340 700 300C800 276 860 200 940 220V520H-60Z"
+    fill="url(#flow-b)"
+  />
+  <path
+    d="M-60 380C100 340 260 420 420 370C580 320 640 200 800 230C860 242 900 280 940 300V520H-60Z"
+    fill="url(#flow-c)"
+  />
+</svg>

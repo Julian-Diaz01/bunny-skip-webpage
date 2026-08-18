@@ -14,7 +14,7 @@ function PlatformMark({
   className,
 }: {
   platform: Platform
-  size?: "sm" | "md" | "lg"
+  size?: "sm" | "md" | "lg" | "xl"
   tone?: "light" | "dark"
   className?: string
 }) {
@@ -22,6 +22,7 @@ function PlatformMark({
     sm: "size-11 text-xs",
     md: "size-16 text-base",
     lg: "size-20 text-xl",
+    xl: "size-28 text-2xl",
   }[size]
 
   return (

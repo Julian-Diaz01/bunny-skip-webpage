@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from "react"
  * put an element in the pending state, and it only does so for elements
  * about to be animated in.
  */
-export function useReveal<T extends HTMLElement>(threshold = 0.2) {
+export function useReveal<T extends HTMLElement>(threshold = 0.12) {
   const ref = useRef<T | null>(null)
   const [isPending, setIsPending] = useState(false)
 
@@ -37,7 +37,7 @@ export function useReveal<T extends HTMLElement>(threshold = 0.2) {
           observer.disconnect()
         }
       },
-      { threshold, rootMargin: "0px 0px -10% 0px" }
+      { threshold, rootMargin: "0px 0px -12% 0px" }
     )
 
     observer.observe(node)

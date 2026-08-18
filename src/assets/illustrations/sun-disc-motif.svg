@@ -8,21 +8,21 @@
   -->
   <defs>
     <radialGradient id="motif-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFE3BB"/>
-      <stop offset="35%" stop-color="#FFA157"/>
-      <stop offset="70%" stop-color="#FF6A2A" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#FF6A2A" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFD8E1"/>
+      <stop offset="35%" stop-color="#FF91AC"/>
+      <stop offset="70%" stop-color="#FE5F8C" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FE5F8C" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="motif-disc" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD9A0"/>
-      <stop offset="70%" stop-color="#FF8A3D"/>
-      <stop offset="100%" stop-color="#FF6A2A"/>
+      <stop offset="0%" stop-color="#FFC9D6"/>
+      <stop offset="70%" stop-color="#FF7B9D"/>
+      <stop offset="100%" stop-color="#FE5F8C"/>
     </radialGradient>
   </defs>
 
   <circle cx="200" cy="200" r="190" fill="url(#motif-glow)"/>
   <circle cx="200" cy="200" r="100" fill="url(#motif-disc)"/>
-  <circle cx="200" cy="200" r="120" fill="none" stroke="#FFD9A0" stroke-opacity="0.4" stroke-width="2"/>
-  <circle cx="200" cy="200" r="145" fill="none" stroke="#FFD9A0" stroke-opacity="0.25" stroke-width="1.5"/>
-  <circle cx="200" cy="200" r="172" fill="none" stroke="#FFD9A0" stroke-opacity="0.12" stroke-width="1"/>
+  <circle cx="200" cy="200" r="120" fill="none" stroke="#FFC9D6" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="200" cy="200" r="145" fill="none" stroke="#FFC9D6" stroke-opacity="0.25" stroke-width="1.5"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#FFC9D6" stroke-opacity="0.12" stroke-width="1"/>
 </svg>
