@@ -1,5 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <title>Bunny Skip</title>
+  <defs>
+    <radialGradient id="logoBubbleFill" cx="36%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#FFD8E5" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FF6F91" stop-opacity="0.10"/>
+    </radialGradient>
+    <linearGradient id="logoBubbleRim" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0%" stop-color="#FF6F91" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <!--    bubble backdrop -->
+  <circle cx="66" cy="66" r="61" fill="url(#logoBubbleFill)"/>
+  <circle cx="66" cy="66" r="61" fill="none" stroke="url(#logoBubbleRim)" stroke-width="1"/>
   <ellipse cx="60" cy="119.5" rx="24" ry="4.5" fill="#2e1b25" opacity="0.22"/>
   <g transform="scale(0.125)">
     <!--    body -->
