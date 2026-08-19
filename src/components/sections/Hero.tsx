@@ -1,13 +1,10 @@
 import flowMotif from "@/assets/illustrations/flow-motif.svg"
-import screenshotThisSite from "@/assets/extension/store-assets/screenshot-1-this-site.png"
-import screenshotAddRule from "@/assets/extension/store-assets/screenshot-3-add-rule.png"
-import heroAtmosphereStars from "@/assets/illustrations/hero-atmosphere-stars.svg"
 import heroBunnySkip from "@/assets/illustrations/hero-bunny-skip.svg"
-import sunDiscMotif from "@/assets/illustrations/sun-disc-motif.svg"
 import { CtaLink } from "@/components/Cta"
 import { ExtensionMark } from "@/components/icons/ExtensionMark"
 import { GithubMark } from "@/components/icons/GithubMark"
 import { CHROME_STORE_URL, GITHUB_URL } from "@/lib/links"
+import {LaptopBrowserMock} from "@/components/LaptopBrowserMock.tsx";
 
 function Hero() {
   return (
@@ -85,62 +82,12 @@ function Hero() {
               className="absolute -inset-2 rounded-[2rem] bg-sun-muted/20 blur-xl"
             />
 
-            {/* the dark atmospheric scene: a framed night-sky panel floating on the light Hero ground */}
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-night-border bg-night">
-              <span
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(circle at 72% 8%, var(--color-night-muted) 0%, var(--color-night) 55%, var(--color-night) 100%)",
-                }}
-              />
-              <img
-                src={heroAtmosphereStars}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 size-full opacity-70 mix-blend-screen"
-              />
+            <LaptopBrowserMock className="relative z-10 w-full" />
 
-              {/* the signature disc, standing in for a glowing moon low over the scene */}
-              <span
-                aria-hidden="true"
-                className="absolute -top-10 -right-10 size-36 rounded-full bg-sun/30 blur-2xl sm:size-44"
-              />
-              <img
-                src={sunDiscMotif}
-                alt=""
-                aria-hidden="true"
-                className="absolute -top-8 -right-8 w-32 opacity-90 sm:w-40"
-              />
-
-              {/* two real product screenshots, layered and angled like floating device panels */}
-              <span
-                aria-hidden="true"
-                className="absolute top-[8%] right-[2%] h-[38%] w-[56%] rotate-[7deg] rounded-xl bg-sun/15 blur-xl"
-              />
-              <img
-                src={screenshotAddRule}
-                alt="Real screenshot of the Bunny Skip popup on the Add Rule screen, showing the point-and-click selector picker for creating a new skip rule."
-                className="absolute top-[8%] right-[2%] w-[56%] rotate-[7deg] rounded-xl border border-night-border/70"
-              />
-
-              <span
-                aria-hidden="true"
-                className="absolute bottom-[10%] left-[4%] h-[48%] w-[76%] -rotate-[5deg] rounded-xl bg-sun/20 blur-2xl"
-              />
-              <img
-                src={screenshotThisSite}
-                alt="Real screenshot of the Bunny Skip popup open on a streaming page, showing the saved rule for the current site."
-                className="absolute bottom-[10%] left-[4%] w-[76%] -rotate-[5deg] rounded-xl border border-night-border/70"
-              />
-            </div>
-
-            {/* the bunny mascot, leaping in front of the scene and breaking past the panel's edge */}
             <img
               src={heroBunnySkip}
               alt="Illustration of the Bunny Skip mascot mid-leap toward a glowing skip-forward pill button haloed by the site's sun/moon disc motif."
-              className="absolute -bottom-6 left-1/2 w-32 -translate-x-1/2 sm:w-36 lg:-bottom-8 lg:w-40"
+              className="absolute -top-[25%] -right-[10%] z-1 w-[30%] sm:w-[32%]"
             />
           </div>
         </div>
