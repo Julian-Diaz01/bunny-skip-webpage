@@ -7,14 +7,129 @@
     <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png" />
     <link rel="apple-touch-icon" href="/favicon-128.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2B1620" />
+
+    <title>Bunny Skip — Auto-Skip Intros &amp; Recaps | Chrome Extension</title>
     <meta
       name="description"
-      content="Bunny Skip is a Chrome extension that automatically clicks Skip Intro, Skip Recap, and Next Episode across seven streaming platforms. Rules are stored as data, not code — no backend, no telemetry, no eval."
+      content="Bunny Skip is a Chrome extension that auto-clicks Skip Intro, Skip Recap, and Next Episode across seven streaming platforms — no backend, no telemetry, no eval."
     />
-    <title>Bunny Skip — skip the button, not the show</title>
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://bunny-skip.konnektaro.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bunny Skip" />
+    <meta property="og:url" content="https://bunny-skip.konnektaro.com/" />
+    <meta
+      property="og:title"
+      content="Bunny Skip — Auto-Skip Intros &amp; Recaps"
+    />
+    <meta
+      property="og:description"
+      content="Auto-clicks Skip Intro, Skip Recap, and Next Episode across seven streaming platforms — no backend, no telemetry, no eval."
+    />
+    <meta
+      property="og:image"
+      content="https://bunny-skip.konnektaro.com/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Bunny Skip — a Chrome extension that skips intros, recaps, and next-episode prompts across seven streaming platforms"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Bunny Skip — Auto-Skip Intros &amp; Recaps"
+    />
+    <meta
+      name="twitter:description"
+      content="Auto-clicks Skip Intro, Skip Recap, and Next Episode across seven streaming platforms — no backend, no telemetry, no eval."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bunny-skip.konnektaro.com/og-image.png"
+    />
+
+    <!-- AI crawler / LLM discovery -->
+    <link rel="llms-txt" href="/llms.txt" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://bunny-skip.konnektaro.com/#website",
+            "url": "https://bunny-skip.konnektaro.com/",
+            "name": "Bunny Skip",
+            "description": "Marketing site for Bunny Skip, a Chrome extension that auto-clicks Skip Intro, Skip Recap, and Next Episode prompts across seven streaming platforms.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://bunny-skip.konnektaro.com/#software",
+            "name": "Bunny Skip",
+            "url": "https://bunny-skip.konnektaro.com/",
+            "image": "https://bunny-skip.konnektaro.com/og-image.png",
+            "description": "Bunny Skip automatically clicks Skip Intro, Skip Recap, and Next Episode prompts across seven major streaming platforms: Netflix, Prime Video, Disney+, Hulu, Max, Apple TV+, and Paramount+. Match rules are stored as data (selectors), not hardcoded per-site JavaScript, so a broken rule is fixed by re-picking the button, not shipping a code change. It makes zero network calls, has no backend, and collects no telemetry.",
+            "applicationCategory": "BrowserApplication",
+            "applicationSubCategory": "Browser Extension",
+            "operatingSystem": "Chrome",
+            "browserRequirements": "Requires Google Chrome or a Chromium-based browser",
+            "softwareRequirements": "Google Chrome",
+            "isAccessibleForFree": true,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "downloadUrl": "https://chromewebstore.google.com/detail/fidpamnbdamkmianclaiokdoginbjbbh",
+            "installUrl": "https://chromewebstore.google.com/detail/fidpamnbdamkmianclaiokdoginbjbbh",
+            "codeRepository": "https://github.com/Julian-Diaz01/bunny-skip-extension",
+            "license": "https://github.com/Julian-Diaz01/bunny-skip-extension/blob/master/LICENSE",
+            "featureList": [
+              "Auto-clicks Skip Intro, Skip Recap, and Next Episode prompts",
+              "Works across seven streaming platforms: Netflix, Prime Video, Disney+, Hulu, Max, Apple TV+, and Paramount+",
+              "Match rules stored as data (element selectors), not hardcoded per-site code",
+              "In-extension element picker for capturing new rules without a code change",
+              "No backend, no network calls, no telemetry or analytics",
+              "Never touches ads, paywalls, or DRM content",
+              "Open source under the MIT license"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Bunny Skip</h1>
+      <p>
+        Bunny Skip is a Chrome extension that automatically clicks "Skip
+        Intro," "Skip Recap," and "Next Episode" prompts across seven
+        streaming platforms — Netflix, Prime Video, Disney+, Hulu, Max, Apple
+        TV+, and Paramount+. Match rules are stored as data, not hardcoded
+        per-site code, so a broken rule is fixed by re-picking the button in
+        the popup — no code changes required. It makes zero network calls,
+        has no backend, and collects no telemetry.
+      </p>
+      <p>
+        <a href="https://chromewebstore.google.com/detail/fidpamnbdamkmianclaiokdoginbjbbh"
+          >Install from the Chrome Web Store</a
+        >
+        or
+        <a href="https://github.com/Julian-Diaz01/bunny-skip-extension"
+          >view the source on GitHub</a
+        >.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
