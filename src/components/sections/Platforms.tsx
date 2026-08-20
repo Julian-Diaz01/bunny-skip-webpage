@@ -8,7 +8,7 @@ function Platforms() {
   return (
     <section
       id="platforms"
-      className="flex min-h-dvh scroll-mt-24 flex-col justify-center bg-paper py-16 text-paper-foreground sm:py-20 lg:py-24"
+      className="flex min-h-svh scroll-mt-24 flex-col justify-center bg-paper py-16 text-paper-foreground sm:py-20 lg:py-24"
     >
       <div className="mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="mx-auto max-w-[46rem] text-center">

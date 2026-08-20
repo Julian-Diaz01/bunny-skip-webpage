@@ -25,7 +25,7 @@ function Manifesto() {
   return (
     <section
       id="privacy"
-      className="relative flex min-h-dvh scroll-mt-24 flex-col justify-center overflow-hidden bg-sun-deep py-14 text-sun-foreground sm:py-16 lg:py-20"
+      className="relative flex min-h-svh scroll-mt-24 flex-col justify-center overflow-hidden bg-sun-deep py-14 text-sun-foreground sm:py-16 lg:py-20"
     >
       <div className="relative mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="relative mx-auto max-w-[52rem] text-center">

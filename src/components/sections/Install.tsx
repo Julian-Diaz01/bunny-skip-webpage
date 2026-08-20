@@ -19,7 +19,7 @@ function Install() {
   return (
     <section
       id="install"
-      className="flex min-h-dvh scroll-mt-24 flex-col justify-center bg-paper py-20 text-paper-foreground sm:py-24 lg:py-28"
+      className="flex min-h-svh scroll-mt-24 flex-col justify-center bg-paper py-20 text-paper-foreground sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="mx-auto max-w-[46rem] text-center">
