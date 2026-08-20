@@ -1,0 +1,48 @@
+# Bunny Skip — robots.txt
+# https://bunny-skip.konnektaro.com/
+
+User-agent: *
+Allow: /
+
+# AI assistants / answer engines — explicitly allowed, this is a
+# marketing page meant to be found, summarized, and cited.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+Sitemap: https://bunny-skip.konnektaro.com/sitemap.xml
