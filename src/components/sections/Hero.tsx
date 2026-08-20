@@ -86,7 +86,7 @@ function Hero() {
             <img
               src={heroBunnySkip}
               alt="Illustration of the Bunny Skip mascot mid-leap toward a glowing skip-forward pill button haloed by the site's sun/moon disc motif."
-              className="absolute -top-[25%] -right-[10%] z-1 w-[30%] sm:w-[32%]"
+              className="absolute -top-[25%] -right-[10%] z-1 w-[30%] sm:w-[32%] sm: hidden"
             />
           </div>
         </div>

@@ -65,7 +65,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex w-full flex-col items-center gap-2 sm:w-auto sm:flex-row">
             <FooterLink
               href={CHROME_STORE_URL}
               tone="invert"
