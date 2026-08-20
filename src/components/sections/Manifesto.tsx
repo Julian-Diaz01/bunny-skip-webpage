@@ -1,4 +1,3 @@
-import sunDiscMotif from "@/assets/illustrations/sun-disc-motif.svg"
 import { ArrowRightGlyph } from "@/components/Cta"
 import { Reveal } from "@/components/Reveal"
 import { PRIVACY_POLICY_URL } from "@/lib/links"
@@ -26,25 +25,18 @@ function Manifesto() {
   return (
     <section
       id="privacy"
-      className="relative scroll-mt-24 overflow-hidden bg-sun-deep py-32 text-sun-foreground sm:py-48 lg:py-64"
+      className="relative flex min-h-dvh scroll-mt-24 flex-col justify-center overflow-hidden bg-sun-deep py-14 text-sun-foreground sm:py-16 lg:py-20"
     >
-      <img
-        src={sunDiscMotif}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 w-[92vw] max-w-[46rem] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] mix-blend-multiply"
-      />
-
-      <div className="relative mx-auto max-w-[72rem] px-6 sm:px-8 lg:px-10">
+      <div className="relative mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="relative mx-auto max-w-[52rem] text-center">
-          <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.94] font-semibold tracking-[-0.02em] uppercase">
+          <h2 className="font-display text-[clamp(2rem,5.5vw,4.25rem)] leading-[0.98] font-semibold tracking-[-0.02em] uppercase">
             No backend.
             <br />
             No telemetry.
             <br />
             No eval.
           </h2>
-          <p className="mx-auto mt-8 max-w-[38ch] font-body text-xl leading-[1.5] italic sm:text-2xl">
+          <p className="mx-auto mt-6 max-w-[38ch] font-body text-lg leading-[1.5] italic sm:text-xl">
             A tool that runs on every streaming page you open earns its
             trust in specifics, not a footnote — so here they are, in full.
           </p>
@@ -52,7 +44,7 @@ function Manifesto() {
             href={PRIVACY_POLICY_URL}
             target="_blank"
             rel="noreferrer"
-            className="mt-16 inline-flex items-center gap-2 rounded-sm font-display text-sm font-semibold tracking-[0.04em] text-sun-foreground uppercase underline decoration-2 underline-offset-4 transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-sun-deep"
+            className="mt-8 inline-flex items-center gap-2 rounded-sm font-display text-sm font-semibold tracking-[0.04em] text-sun-foreground uppercase underline decoration-2 underline-offset-4 transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-sun-deep"
           >
             Read the privacy policy
             <ArrowRightGlyph className="size-3.5" />
@@ -61,7 +53,7 @@ function Manifesto() {
 
         <Reveal
           delayMs={140}
-          className="mt-24 grid grid-cols-1 gap-4 text-left sm:mt-28 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-8 grid grid-cols-1 gap-4 text-left sm:mt-10 sm:grid-cols-2 lg:grid-cols-4"
         >
           {FACTS.map((fact) => (
             <div

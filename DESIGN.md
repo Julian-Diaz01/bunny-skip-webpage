@@ -160,7 +160,7 @@ Wordmark + text links, uppercase font-display labels. Both the primary nav and t
 The primary recurring non-content graphic device: a soft-edged circular glow, reused behind the Hero illustration, as a watermark in the Manifesto section, behind each `PlatformMark`, and as the geometry of every `CtaCircle`. It carries no folklore narrative (no rabbit-in-the-moon illustration) — it is treated purely as light and geometry.
 
 ### Flow Motif (secondary background device)
-A soft organic band of layered wave curves (`src/assets/illustrations/flow-motif.svg`), the disc's non-circular counterpart — used sparingly as a low-opacity (`opacity-50`–`70`, `mix-blend-multiply`) ambient background layer behind the Hero and Feature Tiles sections only. It is a background texture, never a foreground shape and never a whole-section color field — the One Field Rule still governs how much rose-pink it's allowed to carry.
+A soft organic band of layered wave curves (`src/assets/illustrations/flow-motif.svg`), the disc's non-circular counterpart — used sparingly as a low-opacity (`opacity-50`–`70`, `mix-blend-multiply`) ambient background layer behind the Feature Tiles section. It is a background texture, never a foreground shape and never a whole-section color field — the One Field Rule still governs how much rose-pink it's allowed to carry. The Hero instead uses a dedicated "Dusty Rose" gradient + grain background (`.hero-gradient` in `src/index.css`): a diagonal blush-to-rose linear gradient, a blurred radial highlight multiplied on top, and a subtle feTurbulence noise overlay.
 
 ## Do's and Don'ts
 

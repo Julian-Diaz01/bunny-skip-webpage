@@ -110,6 +110,101 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+.aura-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* height must be explicit - absolute layers add none */
+  min-height: 100dvh; /* accounts for mobile browser chrome; falls back to 100vh above */
+}
+
+.aura-layer-1 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    #ffe4e6 0%,
+    #fda4af 38%,
+    #fb718520 68%,
+    #e11d4820 100%
+  );
+  mix-blend-mode: normal;
+  filter: blur(200px); /* 260px on desktop, see media query below */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.aura-layer-2 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 48% 45% at 40% 42%,
+    rgba(255, 255, 255, 0.25) 0%,
+    transparent 62%
+  );
+  mix-blend-mode: multiply;
+  filter: blur(100px); /* 144px on desktop, see media query below */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .aura-layer-1 {
+    filter: blur(260px);
+  }
+  .aura-layer-2 {
+    filter: blur(144px);
+  }
+}
+
+.aura-grain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  mix-blend-mode: overlay;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.aura-grain svg {
+  position: absolute;
+  inset: -15%;
+  width: 130%;
+  height: 130%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .aura-grain svg {
+    animation: aura-grain-flow 90s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes aura-grain-flow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-5%, -3%, 0);
+  }
+  100% {
+    transform: translate3d(-2%, -6%, 0);
+  }
+}
+
+.aura-content {
+  position: relative;
+  z-index: 1;
+}
+
+.bunny-hop-loop {
+  position: absolute;
+  bottom: 4%;
+  left: 4%;
+  z-index: 2;
+  cursor: pointer;
+}
+
 /* .dark class — night family becomes the base surface */
 .dark {
   --background: var(--color-night);
@@ -213,6 +308,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: #faf8f2; /* Dusty Rose Aura base — .aura-bg layers blend against this */
     font-family: var(--font-body);
     margin: 0;
   }
@@ -279,5 +375,170 @@
       opacity: 0;
       transform: translateY(16px);
     }
+  }
+}
+
+/*
+ * Bunny "skip" (hop) loop — see src/components/BunnySkipLoop.tsx.
+ * Four synced layers: the body does the squash-and-stretch bounce, the
+ * ear flops with a phase lag for overlapping-action secondary motion, the
+ * hind leg is a separate part rotating around a hip pivot (kicks back on
+ * launch, tucks forward for landing), and the ground ellipse compresses/
+ * dims opposite the hop height. Static (no animation) by default; motion
+ * is opt-in under prefers-reduced-motion: no-preference, matching
+ * .aura-grain/.reveal above. Also paused on hidden tabs via the
+ * .is-paused class toggled in the component.
+ */
+.bunny-hop-root,
+.bunny-hop-ear,
+.bunny-hop-leg {
+  transform-box: fill-box;
+}
+
+.bunny-hop-root {
+  /* Carries the whole-body vertical bounce/squash so the leg (nested
+     inside, below) moves up and down with the body instead of staying
+     planted on the ground while the body hops above it. */
+  transform-origin: 50% 100%;
+}
+
+.bunny-hop-ear {
+  transform-origin: 12% 6%;
+}
+
+.bunny-hop-leg {
+  /* Pivot at the top-center of the leg's own bounding box — the hip
+     joint where it tucks under the torso (which paints over the seam). */
+  transform-origin: 50% 0%;
+}
+
+.bunny-hop-shadow {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bunny-hop-root {
+    animation: bunny-hop-bounce 1.1s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+  .bunny-hop-ear {
+    animation: bunny-hop-ear-flop 1.1s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: -90ms;
+  }
+  .bunny-hop-leg {
+    animation: bunny-hop-leg-kick 1.1s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: -60ms;
+  }
+  .bunny-hop-shadow {
+    animation: bunny-hop-shadow 1.1s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  .bunny-hop-loop.is-paused .bunny-hop-root,
+  .bunny-hop-loop.is-paused .bunny-hop-ear,
+  .bunny-hop-loop.is-paused .bunny-hop-leg,
+  .bunny-hop-loop.is-paused .bunny-hop-shadow {
+    animation-play-state: paused;
+  }
+
+  /* Clicking the mascot (see BunnySkipLoop.tsx) freezes it at the 0%
+     keyframe pose of each part, rather than wherever mid-cycle it was
+     paused. */
+  .bunny-hop-loop.is-stopped .bunny-hop-root {
+    animation: none;
+    transform: translateY(0) scaleX(1.06) scaleY(0.92);
+  }
+  .bunny-hop-loop.is-stopped .bunny-hop-ear {
+    animation: none;
+    transform: rotate(6deg);
+  }
+  .bunny-hop-loop.is-stopped .bunny-hop-leg {
+    animation: none;
+    transform: rotate(6deg);
+  }
+  .bunny-hop-loop.is-stopped .bunny-hop-shadow {
+    animation: none;
+    transform: scaleX(1);
+    opacity: 0.22;
+  }
+}
+
+@keyframes bunny-hop-bounce {
+  0% {
+    /* grounded, compressed — anticipation before launch */
+    transform: translateY(0) scaleX(1.08) scaleY(0.9);
+  }
+  20% {
+    /* leaving the ground, stretched vertically */
+    transform: translateY(-15px) scaleX(0.96) scaleY(1.08);
+  }
+  50% {
+    /* peak height — matches shadow's smallest/faintest point */
+    transform: translateY(-20px) scaleX(1) scaleY(1);
+  }
+  80% {
+    /* falling, stretched again */
+    transform: translateY(-15px) scaleX(0.96) scaleY(1.06);
+  }
+  92% {
+    /* landing impact — deepest squash, matches shadow's biggest/darkest point */
+    transform: translateY(0) scaleX(1.08) scaleY(0.9);
+  }
+  100% {
+    /* settle toward the next 0% so the loop closes without a pop */
+    transform: translateY(0) scaleX(1.06) scaleY(0.92);
+  }
+}
+
+@keyframes bunny-hop-leg-kick {
+  0% {
+    transform: rotate(6deg);
+  }
+  20% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(-34deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  92% {
+    transform: rotate(14deg);
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes bunny-hop-shadow {
+  0% {
+    /* body grounded — full contact */
+    transform: scaleX(1);
+    opacity: 0.22;
+  }
+  20% {
+    /* body lifting off — shrinking */
+    transform: scaleX(0.7);
+    opacity: 0.12;
+  }
+  50% {
+    /* body at peak height — smallest, faintest */
+    transform: scaleX(0.55);
+    opacity: 0.08;
+  }
+  80% {
+    /* body falling — growing back */
+    transform: scaleX(0.7);
+    opacity: 0.12;
+  }
+  92% {
+    /* landing impact — slight overshoot past resting size */
+    transform: scaleX(1.05);
+    opacity: 0.24;
+  }
+  100% {
+    /* settle, matches 0% */
+    transform: scaleX(1);
+    opacity: 0.22;
   }
 }

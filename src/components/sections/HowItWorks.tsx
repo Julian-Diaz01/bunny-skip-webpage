@@ -23,34 +23,34 @@ function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-24 bg-night py-32 text-paper sm:py-48 lg:py-64"
+      className="flex min-h-dvh scroll-mt-24 flex-col justify-center bg-night py-16 text-paper sm:py-20 lg:py-24"
     >
-      <div className="mx-auto max-w-[72rem] px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="max-w-[36rem] text-left">
           <h2 className="max-w-[20ch] font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.0] font-semibold tracking-[-0.015em] uppercase">
             How it works
           </h2>
-          <p className="mt-6 font-body text-lg leading-[1.55] text-paper/70 italic sm:text-xl">
+          <p className="mt-4 font-body text-lg leading-[1.55] text-paper/70 italic sm:text-xl">
             One mechanism, run the same way on every supported platform.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid items-center gap-14 sm:mt-20 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-          <ol className="order-2 grid grid-cols-1 gap-4 text-left lg:order-1">
+        <div className="mt-6 grid items-center gap-8 sm:mt-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+          <ol className="order-2 grid grid-cols-1 gap-2 text-left sm:grid-cols-3 lg:order-1 lg:grid-cols-1">
             {STEPS.map((step, i) => (
               <Reveal
                 as="li"
                 delayMs={i * 70}
                 key={step.n}
-                className="rounded-2xl border border-night-border bg-night-muted/60 p-7 transition-colors duration-200 hover:border-sun/40 sm:p-8"
+                className="rounded-2xl border border-night-border bg-night-muted/60 p-4 transition-colors duration-200 hover:border-sun/40 sm:p-5"
               >
                 <p className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-sun-muted uppercase sm:text-xs">
                   {step.n}
                 </p>
-                <h3 className="mt-4 font-display text-[1.375rem] leading-[1.15] font-semibold tracking-[-0.01em] uppercase sm:text-2xl">
+                <h3 className="mt-2 font-display text-lg leading-[1.15] font-semibold tracking-[-0.01em] uppercase">
                   {step.title}
                 </h3>
-                <p className="mt-3 max-w-[38ch] font-body text-base leading-[1.7] text-paper/70 sm:text-[1.0625rem]">
+                <p className="mt-2 font-body text-sm leading-[1.45] text-paper/70">
                   {step.body}
                 </p>
               </Reveal>
@@ -59,7 +59,7 @@ function HowItWorks() {
 
           <Reveal
             delayMs={140}
-            className="relative order-1 mx-auto w-full max-w-[30rem] lg:order-2 lg:max-w-none"
+            className="relative order-1 mx-auto w-full max-w-[26rem] lg:order-2 lg:mx-0 lg:ml-auto lg:max-w-[24rem]"
           >
             <span
               aria-hidden="true"

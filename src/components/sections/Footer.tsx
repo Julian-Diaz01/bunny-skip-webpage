@@ -1,99 +1,88 @@
-import icon48 from "@/assets/extension/icons/icon48.png"
-import { GithubMark } from "@/components/icons/GithubMark"
-import {
-  CHROME_STORE_URL,
-  GITHUB_URL,
-  LICENSE_URL,
-  PRIVACY_POLICY_URL,
-} from "@/lib/links"
-import { PLATFORMS } from "@/lib/platforms"
+import * as React from "react"
 
-const LINK_COLUMNS = [
-  {
-    heading: "Install",
-    links: [{ href: CHROME_STORE_URL, label: "Chrome Web Store" }],
-  },
-  {
-    heading: "Source",
-    links: [
-      { href: GITHUB_URL, label: "GitHub", icon: true },
-      { href: LICENSE_URL, label: "MIT License" },
-    ],
-  },
-  {
-    heading: "Trust",
-    links: [{ href: PRIVACY_POLICY_URL, label: "Privacy Policy" }],
-  },
-]
+import icon48 from "@/assets/extension/icons/icon48.png"
+import { ExtensionMark } from "@/components/icons/ExtensionMark"
+import { GithubMark } from "@/components/icons/GithubMark"
+import { CHROME_STORE_URL, GITHUB_URL } from "@/lib/links"
+import { cn } from "@/lib/utils"
+
+const FOOTER_LINK_TONE = {
+  invert:
+    "border-sun bg-sun text-sun-foreground hover:bg-sun-muted hover:border-sun-muted focus-visible:ring-sun",
+  outline:
+    "border-paper/30 bg-transparent text-paper hover:border-paper hover:bg-paper hover:text-night focus-visible:ring-sun",
+} as const
+
+function FooterLink({
+  href,
+  tone,
+  icon,
+  children,
+}: {
+  href: string
+  tone: keyof typeof FOOTER_LINK_TONE
+  icon: React.ReactNode
+  children: React.ReactNode
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={cn(
+        "inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 py-2 font-display text-xs font-medium tracking-[0.03em] uppercase transition-colors duration-200",
+        "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-night focus-visible:outline-none",
+        FOOTER_LINK_TONE[tone]
+      )}
+    >
+      {icon}
+      {children}
+    </a>
+  )
+}
 
 function Footer() {
   return (
     <footer className="bg-night text-paper">
-      <div className="mx-auto max-w-[72rem] px-6 pt-24 pb-10 sm:px-8 lg:px-10">
-        <div className="mb-16 flex items-center gap-3">
-          <img
-            src={icon48}
-            alt=""
-            width={32}
-            height={32}
-            className="rounded-md"
-          />
-          <div>
-            <p className="font-display text-base font-semibold tracking-[0.06em] uppercase">
-              Bunny Skip
-            </p>
-            <p className="mt-1 font-body text-sm text-paper/55 italic">
-              Skips the button. Never the content.
-            </p>
+      <div className="mx-auto max-w-[72rem] px-6 py-8 sm:px-8 lg:px-10">
+        <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="flex items-center gap-3">
+            <img
+              src={icon48}
+              alt=""
+              width={32}
+              height={32}
+              className="rounded-md"
+            />
+            <div>
+              <p className="font-display text-base font-semibold tracking-[0.06em] uppercase">
+                Bunny Skip
+              </p>
+              <p className="mt-1 font-body text-sm text-paper/55 italic">
+                Skips the button. Never the content.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FooterLink
+              href={CHROME_STORE_URL}
+              tone="invert"
+              icon={<ExtensionMark className="size-3.5" />}
+            >
+              Chrome Web Store
+            </FooterLink>
+            <FooterLink
+              href={GITHUB_URL}
+              tone="outline"
+              icon={<GithubMark className="size-3.5" />}
+            >
+              View source
+            </FooterLink>
           </div>
         </div>
 
-        <nav aria-label="Footer">
-          <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
-            {LINK_COLUMNS.map((column) => (
-              <div key={column.heading}>
-                <p className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-paper/45 uppercase">
-                  {column.heading}
-                </p>
-                <ul className="mt-5 space-y-3">
-                  {column.links.map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-sm font-body text-sm text-paper/75 transition-colors hover:text-sun-muted focus-visible:text-sun-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun focus-visible:ring-offset-2 focus-visible:ring-offset-night"
-                      >
-                        {link.icon && (
-                          <GithubMark className="size-3.5" aria-hidden="true" />
-                        )}
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-            <div>
-              <p className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-paper/45 uppercase">
-                Supported
-              </p>
-              <ul className="mt-5 space-y-3">
-                {PLATFORMS.map((platform) => (
-                  <li
-                    key={platform.name}
-                    className="font-body text-sm text-paper/75"
-                  >
-                    {platform.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-        <div className="mt-20 border-t border-paper/12 pt-8">
+        <div className="mt-6 border-t border-paper/12 pt-4 text-center sm:text-left">
           <p className="font-body text-xs text-paper/60">
             Bunny Skip is an independent, open-source project. Not affiliated
             with or endorsed by any streaming platform.

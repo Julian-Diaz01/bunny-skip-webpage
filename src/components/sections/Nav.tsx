@@ -2,13 +2,14 @@ import { useEffect, useState, type SVGProps } from "react"
 
 import icon48 from "@/assets/extension/icons/icon48.png"
 import { CtaLink } from "@/components/Cta"
+import { ExtensionMark } from "@/components/icons/ExtensionMark"
+import { CHROME_STORE_URL } from "@/lib/links"
 import { cn } from "@/lib/utils"
 
 const LINKS = [
   { href: "#how-it-works", label: "How it works" },
-  { href: "#platforms", label: "Platforms" },
   { href: "#privacy", label: "Privacy" },
-  { href: "#install", label: "Install" },
+  { href: "#platforms", label: "Platforms" },
 ]
 
 function MenuGlyph(props: SVGProps<SVGSVGElement>) {
@@ -113,9 +114,9 @@ function Nav() {
             ))}
           </ul>
           <CtaLink
-            href="#install"
+            href={CHROME_STORE_URL}
             variant="secondary"
-            external={false}
+            icon={<ExtensionMark className="size-3.5" />}
             className="ml-6 hidden px-4 py-2 text-xs sm:inline-flex"
           >
             Install
@@ -156,9 +157,9 @@ function Nav() {
             ))}
           </ul>
           <CtaLink
-            href="#install"
+            href={CHROME_STORE_URL}
             variant="secondary"
-            external={false}
+            icon={<ExtensionMark className="size-3.5" />}
             className="mt-4 w-full justify-center px-4 py-2.5 text-xs"
             onClick={() => setMenuOpen(false)}
           >

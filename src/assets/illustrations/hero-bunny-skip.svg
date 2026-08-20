@@ -1,10 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Original illustration: the Bunny Skip mascot mid-leap toward a glowing &quot;skip&quot; pill button haloed by the site's signature sun/moon disc, not a screenshot of any real interface.">
   <defs>
-    <radialGradient id="hbs-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD8E1" stop-opacity="0.95"/>
-      <stop offset="45%" stop-color="#FF91AC" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FE5F8C" stop-opacity="0"/>
-    </radialGradient>
   </defs>
 
   <!-- sun/moon disc motif: soft backlight + concentric rings, doubling as the "spotlight" the bunny is leaping into and the skip pill sits inside. Sized/positioned to stay fully inside the 400x400 canvas so the radial fade never hard-clips against the viewBox edge. -->

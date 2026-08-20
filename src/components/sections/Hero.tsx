@@ -1,5 +1,6 @@
-import flowMotif from "@/assets/illustrations/flow-motif.svg"
 import heroBunnySkip from "@/assets/illustrations/hero-bunny-skip.svg"
+import { AuraGrain } from "@/components/AuraGrain"
+import { BunnySkipLoop } from "@/components/BunnySkipLoop"
 import { CtaLink } from "@/components/Cta"
 import { ExtensionMark } from "@/components/icons/ExtensionMark"
 import { GithubMark } from "@/components/icons/GithubMark"
@@ -10,14 +11,12 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-paper text-paper-foreground scroll-mt-24"
+      className="aura-bg flex flex-col text-paper-foreground scroll-mt-24"
     >
-      <img
-        src={flowMotif}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] w-full opacity-70 mix-blend-multiply"
-      />
+      <div className="aura-layer-1" aria-hidden="true" />
+      <div className="aura-layer-2" aria-hidden="true" />
+      <AuraGrain />
+      <BunnySkipLoop />
 
       <div
         id="nav-sentinel"
@@ -25,7 +24,7 @@ function Hero() {
         className="absolute top-6 h-px w-full"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[72rem] flex-1 flex-col justify-center px-6 pt-28 pb-16 sm:px-8 sm:pt-32 sm:pb-20 lg:px-10 lg:py-24">
+      <div className="aura-content mx-auto flex w-full max-w-[72rem] flex-1 flex-col justify-center px-6 pt-28 pb-16 sm:px-8 sm:pt-32 sm:pb-20 lg:px-10 lg:py-24">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h1 className="max-w-[17ch] font-display text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.08] font-semibold tracking-[-0.01em] uppercase">
@@ -33,7 +32,7 @@ function Hero() {
               <br />
               Skip the recap.
               <br />
-              <span className="text-sun">
+              <span className="text-sun-deep">
                 Never click
                 <br />
                 next episode.
