@@ -23,7 +23,7 @@ function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="flex min-h-dvh scroll-mt-24 flex-col justify-center bg-night py-16 text-paper sm:py-20 lg:py-24"
+      className="flex min-h-svh scroll-mt-24 flex-col justify-center bg-night py-16 text-paper sm:py-20 lg:py-24"
     >
       <div className="mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="max-w-[36rem] text-left">

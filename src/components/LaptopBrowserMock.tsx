@@ -38,7 +38,13 @@ function LaptopBrowserMock({ className }: LaptopBrowserMockProps) {
           height: "40%",
         }}
       />
-      <img src={macbookMock} alt="" aria-hidden="true" className="absolute inset-0 size-full" />
+      <img
+        src={macbookMock}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        className="absolute inset-0 size-full"
+      />
     </div>
   )
 }
