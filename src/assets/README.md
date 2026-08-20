@@ -26,11 +26,6 @@ All six share one palette — this row was previously stale (documented an orang
 | Path | Depicts | Notes |
 | --- | --- | --- |
 | `src/assets/illustrations/hero-bunny-skip.svg` | Hero illustration: the Bunny Skip mascot (same silhouette/pose as `logo.svg`) mid-leap along a dashed motion arc toward a glowing "skip forward" pill button haloed by the sun/moon disc motif. 400×400 viewBox. | Synthetic/original — no real product screen, no real streaming platform logo or UI, no ad-skipping depicted. |
-| `src/assets/illustrations/hero-bunny-skyline.svg` | Full-bleed hero: bunny mid-leap over a skyline built from invented UI-chrome shapes (play-button spires, progress-bar towers with a scrubber knob, a rounded "SKIP INTRO" pill building), backlit by the sun/moon disc. 1600×900 viewBox. | Synthetic/original — no real product screen, no real streaming platform logo or UI, no ad-skipping depicted. Currently unused by any component (kept for reference). |
-| `src/assets/illustrations/feature-rules-as-data.svg` | Feature tile for "Rules as data": a dark card of labeled rows with pill toggles. 400×400 viewBox. | Abstract data-row iconography, not a UI screenshot. |
-| `src/assets/illustrations/feature-zero-telemetry.svg` | Feature tile for "Zero telemetry": a shield with broadcast arcs struck through and dissolving data dots. 400×400 viewBox. | Abstract iconography, not a UI screenshot. |
-| `src/assets/illustrations/feature-element-picker.svg` | Feature tile for "Element picker": a crosshair cursor selecting a generic pill button inside a dashed selection box with corner handles. 400×400 viewBox. | Abstract iconography, not a UI screenshot. |
-| `src/assets/illustrations/sun-disc-motif.svg` | Standalone signature motif: the circular sun/moon disc as glow + concentric rings, no folklore narrative. 400×400 viewBox. | Reusable compositional device — behind headers, CTAs, card marks, etc. |
 | `src/assets/illustrations/hero-atmosphere-stars.svg` | Decorative starfield texture: a scattered field of small low-opacity blush-white dots, used as an ambient background layer inside the Hero's dark atmospheric scene panel. 400×500 viewBox. | Purely decorative texture, not a UI screenshot. |
 
 ## Directory layout

@@ -4,5 +4,3 @@ export const CHROME_STORE_URL = `https://chromewebstore.google.com/detail/${CHRO
 export const GITHUB_URL = "https://github.com/Julian-Diaz01/bunny-skip-extension"
 export const PRIVACY_POLICY_URL =
   "https://github.com/Julian-Diaz01/bunny-skip-extension/blob/master/PRIVACY_POLICY.md"
-export const LICENSE_URL =
-  "https://github.com/Julian-Diaz01/bunny-skip-extension/blob/master/LICENSE"

@@ -133,17 +133,16 @@ Flat by default — no directional `box-shadow` vocabulary in the system. Depth 
 
 ## Shapes
 
-Two form languages, deliberately paired: **full-round** for every interactive control (pill CTAs at `rounded-full`, circular CTA discs at `rounded-full` fixed `112px`), and **soft-rounded rectangles** for content containers (`rounded-2xl`, 18px, on platform/feature cards). Nothing in the system uses a sharp 0-radius corner or an asymmetric/cut corner. The circular form additionally recurs as the signature sun/moon disc — glow fields, ring outlines, and the circular CTAs all share one geometry family, tying the interactive layer to the illustrative motif.
+Two form languages, deliberately paired: **full-round** for every interactive control (pill CTAs at `rounded-full`), and **soft-rounded rectangles** for content containers (`rounded-2xl`, 18px, on platform/feature cards). Nothing in the system uses a sharp 0-radius corner or an asymmetric/cut corner. The circular form additionally recurs as the signature sun/moon disc — glow fields and ring outlines share one geometry family, tying the interactive layer to the illustrative motif.
 
 ## Components
 
 ### Buttons (CTAs)
-Never a stock shadcn `Button` — the site defines its own `CtaLink` (pill) and `CtaCircle` (disc) primitives in `src/components/Cta.tsx`, each carrying an inline SVG directional glyph (never a Unicode arrow character).
-- **Shape:** `CtaLink` is a full pill (`rounded-full`, `px-6 py-3`); `CtaCircle` is a fixed `112px` circle.
-- **Primary (`CtaLink` primary):** night fill, night-foreground text, sun focus ring.
-- **Secondary (`CtaLink` secondary):** transparent fill, night border/text, fills night on hover.
+Never a stock shadcn `Button` — the site defines its own `CtaLink` (pill) primitive in `src/components/Cta.tsx`, carrying an inline SVG directional glyph (never a Unicode arrow character).
+- **Shape:** full pill (`rounded-full`, `px-6 py-3`).
+- **Primary:** night fill, night-foreground text, sun focus ring.
+- **Secondary:** transparent fill, night border/text, fills night on hover.
 - **Invert variants:** sun-filled or paper-outlined versions for use on dark/saturated grounds (Footer, Manifesto).
-- **Circle tones:** `light` tone (night fill, used on light card backgrounds — e.g. the Chrome Web Store install card) uses a **night** focus ring, not sun, because sun-on-paper focus contrast fails AA; `dark` tone (sun fill, used on dark card backgrounds — the GitHub source card) uses a sun ring.
 - **Hover / Focus:** border/fill inversion on hover (night↔sun↔paper depending on variant); every focus-visible state carries a real `ring-3` or `ring-2` — never a color-only text change.
 
 ### Cards / Containers
@@ -157,7 +156,7 @@ Never a stock shadcn `Button` — the site defines its own `CtaLink` (pill) and 
 Wordmark + text links, uppercase font-display labels. Both the primary nav and the footer nav render as siblings of `<main>` (not nested inside it), preserving their `banner`/`contentinfo` landmark roles. Focus-visible state is a real ring (`ring-2 ring-sun ring-offset-2`), matching the CTA focus pattern rather than a text-color-only substitute.
 
 ### Sun/Moon Disc (signature motif)
-The primary recurring non-content graphic device: a soft-edged circular glow, reused behind the Hero illustration, as a watermark in the Manifesto section, behind each `PlatformMark`, and as the geometry of every `CtaCircle`. It carries no folklore narrative (no rabbit-in-the-moon illustration) — it is treated purely as light and geometry.
+The primary recurring non-content graphic device: a soft-edged circular glow, reused behind the Hero illustration, as a watermark in the Manifesto section, and behind each `PlatformMark`. It carries no folklore narrative (no rabbit-in-the-moon illustration) — it is treated purely as light and geometry.
 
 ### Flow Motif (secondary background device)
 A soft organic band of layered wave curves (`src/assets/illustrations/flow-motif.svg`), the disc's non-circular counterpart — used sparingly as a low-opacity (`opacity-50`–`70`, `mix-blend-multiply`) ambient background layer behind the Feature Tiles section. It is a background texture, never a foreground shape and never a whole-section color field — the One Field Rule still governs how much rose-pink it's allowed to carry. The Hero instead uses a dedicated "Dusty Rose" gradient + grain background (`.hero-gradient` in `src/index.css`): a diagonal blush-to-rose linear gradient, a blurred radial highlight multiplied on top, and a subtle feTurbulence noise overlay.
