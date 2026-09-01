@@ -12,7 +12,7 @@ function App() {
       <main>
         <Hero />
         <HowItWorks />
-          <Manifesto />
+        <Manifesto />
         <Platforms />
       </main>
       <Footer />

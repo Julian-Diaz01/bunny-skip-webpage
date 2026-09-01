@@ -5,7 +5,7 @@ import type { Platform } from "@/lib/platforms"
  * Authored platform badge — not a reproduction of any platform's real logo.
  * Every mark shares one system: a circular sun-disc glow (the site's
  * signature motif) behind a monogram set in the display face, in one
- * consistent stroke/ring weight, so the seven read as a family.
+ * consistent stroke/ring weight, so they read as a family.
  */
 function PlatformMark({
   platform,
