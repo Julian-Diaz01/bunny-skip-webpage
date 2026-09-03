@@ -41,7 +41,7 @@ function Hero() {
 
             <p className="mt-6 max-w-[42ch] font-body text-lg leading-[1.55] text-paper-foreground/70 sm:text-xl">
               Bunny Skip watches for the button and clicks it for you —
-              across seven streaming platforms, with nothing ever phoning
+              across eight streaming platforms, with nothing ever phoning
               home.
             </p>
 
@@ -66,7 +66,7 @@ function Hero() {
 
             <p className="mt-6 font-body text-sm text-paper-foreground/60">
               Works on Netflix, Prime Video, Disney+, Hulu, Max, Apple TV+,
-              and Paramount+.
+              Paramount+, and now YouTube.
             </p>
           </div>
 

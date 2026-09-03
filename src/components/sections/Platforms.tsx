@@ -13,11 +13,11 @@ function Platforms() {
       <div className="mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="mx-auto max-w-[46rem] text-center">
           <h2 className="mx-auto max-w-[20ch] font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.0] font-semibold tracking-[-0.015em] uppercase">
-            Reaches seven platforms
+            Reaches eight platforms
           </h2>
           <p className="mt-4 font-body text-lg leading-[1.55] text-paper-foreground/70 sm:text-xl">
-            Netflix ships ready to go; every other platform learns its rule
-            the first time you point the element picker at its button.
+            Netflix and YouTube ship ready to go; every other platform learns
+            its rule the first time you point the element picker at its button.
           </p>
         </Reveal>
 
@@ -53,11 +53,16 @@ function Platforms() {
                 <div>
                   <p
                     className={cn(
-                      "font-display text-sm font-semibold tracking-[-0.01em] uppercase",
-                      platform.seeded && "text-sun-border"
+                      "flex items-center justify-center gap-1.5 font-display text-sm font-semibold tracking-[-0.01em] uppercase",
+                      (platform.seeded || platform.isNew) && "text-sun-border"
                     )}
                   >
                     {platform.name}
+                    {platform.isNew && (
+                      <span className="inline-block rounded-full border border-sun/60 bg-sun/20 px-1.5 py-0.5 font-display text-[0.5rem] font-semibold tracking-[0.1em] text-sun-border uppercase">
+                        New
+                      </span>
+                    )}
                   </p>
                   {platform.seeded ? (
                     <p className="mt-1.5">
