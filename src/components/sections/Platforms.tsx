@@ -13,7 +13,7 @@ function Platforms() {
       <div className="mx-auto w-full max-w-[72rem] px-6 sm:px-8 lg:px-10">
         <Reveal className="mx-auto max-w-[46rem] text-center">
           <h2 className="mx-auto max-w-[20ch] font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.0] font-semibold tracking-[-0.015em] uppercase">
-            Reaches eight platforms
+            Reaches nine platforms
           </h2>
           <p className="mt-4 font-body text-lg leading-[1.55] text-paper-foreground/70 sm:text-xl">
             Netflix and YouTube ship ready to go; every other platform learns
@@ -41,7 +41,7 @@ function Platforms() {
             </figcaption>
           </Reveal>
 
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3">
             {PLATFORMS.map((platform, i) => (
               <Reveal
                 as="li"
