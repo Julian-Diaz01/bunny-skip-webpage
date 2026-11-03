@@ -1,6 +1,6 @@
 # Bunny Skip — Landing Page
 
-The marketing landing page for **[Bunny Skip](https://chromewebstore.google.com/detail/fidpamnbdamkmianclaiokdoginbjbbh)**, a Chrome extension that automatically clicks "Skip Intro," "Skip Recap," and "Next Episode" prompts across seven major streaming platforms (Netflix, Prime Video, Disney+, Hulu, Max, Apple TV+, Paramount+).
+The marketing landing page for **[Bunny Skip](https://chromewebstore.google.com/detail/fidpamnbdamkmianclaiokdoginbjbbh)**, a Chrome extension that automatically clicks "Skip Intro," "Skip Recap," and "Next Episode" prompts across nine major streaming platforms (Netflix, Prime Video, Disney+, Hulu, Max, Apple TV+, Paramount+, YouTube, Crunchyroll).
 
 This repo builds only the landing page — the extension itself lives at [Julian-Diaz01/bunny-skip-extension](https://github.com/Julian-Diaz01/bunny-skip-extension).
 

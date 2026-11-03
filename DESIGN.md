@@ -106,7 +106,7 @@ Three token families — paper, night, sun — each with a foreground, a muted s
 
 ### Hierarchy
 - **Display** (font-display, fluid `13vw`-scale, uppercase): the Hero `<h1>` only — three stacked lines, the page's single largest text.
-- **Headline** (font-display, `text-4xl`–`text-5xl`, `font-semibold`, uppercase): section `<h2>`s (How It Works, Reaches Seven Platforms, Built to Stay Honest, the manifesto headline, Install, Footer wordmark treatment).
+- **Headline** (font-display, `text-4xl`–`text-5xl`, `font-semibold`, uppercase): section `<h2>`s (How It Works, Reaches Nine Platforms, Built to Stay Honest, the manifesto headline, Install, Footer wordmark treatment).
 - **Body** (font-body, `text-lg`, `leading-relaxed`): section intros and supporting paragraphs, set at ~65–75ch measure.
 - **Label** (font-display, `text-xs`–`text-sm`, uppercase, `tracking-[0.04em]`–`[0.06em]`): CTA button text, platform-card tags ("Ships with seed rules"), install-card eyebrow metadata.
 

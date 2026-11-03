@@ -18,4 +18,5 @@ export const PLATFORMS: Platform[] = [
   { name: "Apple TV+", mark: "TV+" },
   { name: "Paramount+", mark: "P+" },
   { name: "YouTube", mark: "YT", seeded: true, isNew: true },
+  { name: "Crunchyroll", mark: "CR", isNew: true },
 ]
